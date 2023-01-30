@@ -91,7 +91,7 @@ public class ScrabbleScorer {
         while(true) {
             System.out.print("* Welcome to the Scrabble Word Scorer app *\nEnter a word to score or 0 to quit: ");
             String input = in.nextLine().toUpperCase(Locale.ROOT);
-            if (input.equals("0"))
+            if (input.equals("0") || input.length() == 0)
                 break outerloop;
             else if (app.isValidWord(input.trim())) {
                 System.out.println(input.trim() + " = " + app.getWordScore(input.trim()) + " points");
