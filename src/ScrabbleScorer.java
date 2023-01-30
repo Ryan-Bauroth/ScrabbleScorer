@@ -95,10 +95,10 @@ public class ScrabbleScorer {
             String input = in.nextLine().toUpperCase(Locale.ROOT);
             if (input.equals("0"))
                 break outerloop;
-            else if (app.isValidWord(input)) {
-                System.out.println(input + " = " + app.getWordScore(input) + " points");
+            else if (app.isValidWord(input.trim())) {
+                System.out.println(input.trim() + " = " + app.getWordScore(input.trim()) + " points");
             } else {
-                System.out.println(input + "is not a valid word in the dictionary");
+                System.out.println(input.trim() + " is not a valid word in the dictionary");
             }
         }
         System.out.println("Exiting the program thanks for playing");
