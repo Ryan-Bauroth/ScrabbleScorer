@@ -53,10 +53,8 @@ public class ScrabbleScorer {
     public boolean isValidWord(String word){
         for(int i = 0; i < 26; i++){
             if(word.substring(0, 1).equals(pointValues[i][0])){
-                for(int x = 0; x < dict.get(i).size(); x++){
-                    if(dict.get(i).get(x).equals(word)){
-                        return true;
-                    }
+                if(!(Collections.binarySearch(dict.get(i), word) < 0)){
+                    return true;
                 }
             }
         }
